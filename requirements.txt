@@ -1,0 +1,16 @@
+# requirements.txt - Poetry를 사용하지 않는 경우를 위한 패키지 목록
+
+# UI 및 데이터 처리
+streamlit==1.31.0
+pandas==2.1.4
+numpy==1.24.3
+plotly==5.18.0
+pyyaml==6.0.1
+openpyxl==3.1.2
+python-dateutil==2.8.2
+
+# LangChain 및 LLM
+langchain==0.1.9
+langchain-openai==0.0.7
+langgraph==0.0.23
+openai==1.13.3

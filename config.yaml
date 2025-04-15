@@ -1,0 +1,66 @@
+# 시스템 기본 설정
+system:
+  # 출력 디렉토리 설정
+  output_dir: "results"
+  # 프롬프트 디렉토리 설정
+  prompts_dir: "prompts"
+  # 임시 파일 디렉토리 설정
+  temp_dir: "temp"
+  # 로그 파일 경로
+  log_file: "logs/app.log"
+
+# LLM 설정
+llm:
+  # 기본 모델 설정
+  default_model: "openai/gpt-4o-2024-11-20"
+  # 온도 설정 (0에 가까울수록 일관된 응답)
+  temperature: 0.0
+  # 타임아웃 설정 (초)
+  request_timeout: 120
+  # 최대 토큰 수
+  max_tokens: 2000
+
+# 테스트 설정
+test:
+  # 진행 상황 업데이트 간격 (항목 수)
+  progress_interval: 10
+  # 병렬 처리 여부
+  parallel_processing: false
+  # 병렬 처리 시 최대 동시 실행 수
+  max_concurrent: 5
+
+# 도메인별 설정
+domains:
+  # 뉴스 큐레이션 도메인
+  news_curation:
+    # 프롬프트 파일
+    prompt_file: "nc_judge.yaml"
+    # 최소 테스트 항목 수
+    min_test_items: 10
+    # 기본 평가 기준
+    default_criteria: ["신속성", "기능성", "유연성", "일관성"]
+  
+  # 회의실/일정 예약 도메인
+  meeting_scheduler:
+    prompt_file: "meeting_judge.yaml"
+    min_test_items: 10
+    default_criteria: ["정확성", "효율성", "충돌 방지", "적응성"]
+  
+  # 사내 지식 검색 도메인
+  rag_search:
+    prompt_file: "rag_judge.yaml"
+    min_test_items: 10
+    default_criteria: ["검색 정확도", "정보 신뢰성", "검색 속도", "정보 구조화"]
+
+# UI 설정
+ui:
+  # 테마 설정
+  theme: "light"
+  # 차트 높이
+  chart_height: 400
+  # 기본 페이지 크기
+  page_size: 20
+  # 좌측 사이드바 너비
+  sidebar_width: 300
+  # 메인 화면 너비
+  main_width: 900

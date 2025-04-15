@@ -1,0 +1,59 @@
+# 기본 평가 기준 (모든 도메인에 적용)
+default:
+  - name: "정확성"
+    description: "LLM의 답변이 참조 정답과 얼마나 일치하는지 평가"
+    weight: 1.0
+  - name: "완전성"
+    description: "LLM의 답변이 필요한 모든 정보를 포함하는지 평가"
+    weight: 1.0
+  - name: "관련성"
+    description: "LLM의 답변이 질문과 직접적으로 관련이 있는지 평가"
+    weight: 1.0
+  - name: "명확성"
+    description: "LLM의 답변이 명확하고 이해하기 쉬운지 평가"
+    weight: 1.0
+
+# 뉴스 큐레이션 도메인 특화 평가 기준
+news_curation:
+  - name: "신속성"
+    description: "키워드 추출 및 관리 응답 시간"
+    weight: 1.0
+  - name: "기능성"
+    description: "키워드 추출, 제외, 추가 등 기능 수행 정확도"
+    weight: 1.0
+  - name: "유연성"
+    description: "다양한 요청에 대한 적응 능력"
+    weight: 1.0
+  - name: "일관성"
+    description: "동일 요청에 대한 일관된 응답"
+    weight: 1.0
+
+# 회의실/일정 예약 도메인 특화 평가 기준
+meeting_scheduler:
+  - name: "효율성"
+    description: "일정 및 회의실 예약 과정의 효율성 평가"
+    weight: 1.2
+  - name: "정확성"
+    description: "시간과 장소 정보의 정확한 처리 평가"
+    weight: 1.3
+  - name: "충돌 방지"
+    description: "일정 및 회의실 충돌을 방지하는 능력 평가"
+    weight: 1.1
+  - name: "적응성"
+    description: "변경 사항에 유연하게 대응하는 능력 평가"
+    weight: 0.9
+
+# 사내 지식 검색(RAG) 도메인 특화 평가 기준
+rag_search:
+  - name: "검색 정확도"
+    description: "검색 결과의 정확도 평가"
+    weight: 1.3
+  - name: "정보 신뢰성"
+    description: "제공된 정보의 신뢰성 평가"
+    weight: 1.2
+  - name: "검색 속도"
+    description: "검색 속도와 효율성 평가"
+    weight: 0.9
+  - name: "정보 구조화"
+    description: "검색 결과의 구조화 및 정리 능력 평가"
+    weight: 1.0
